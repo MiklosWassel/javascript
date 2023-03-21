@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java script 2.</title>
+    <script>
+        function tipp(){
+            tippem=document.getElementById('tipp').value; 
+            if (tippem == gondol ) {
+                document.getElementById("koszont").innerHTML =
+                gondol+" "+
+                "<input id='tipp'>"
+                 
+            }
+        }
+        function igen(){
+            
+            gondol = Math.floor(Math.random() * 100) + 1;
+            document.getElementById("koszont").innerHTML =
+            "<input id='tipp'>"+
+            "<button onclick='tipp()'>Tippem</button>"
+        }
+        function nem(){
+            document.getElementById("koszont").innerHTML =
+            "Nagyon sajnálom!<br>Viszlát"
+        }
+        function katt() {
+          nev =  document.getElementById("neved").value
+            document.getElementById("koszont").innerHTML = " Jó hogy meglátogattál "+nev+
+            "<br>Szeretnél velem játszani?"+
+            "<button onclick='igen()'> Igen </button>"+
+            "<button onclick='nem()'> Nem </button>";
+        }
+    </script>
+    <style>
+        .cím {
+            font-size: 24px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cím">Üdvözöllek az oldalamon!</div>
+
+    <div>
+        Kérem a neved: <input id="neved">
+        <button onclick="katt()"> nyomd </button>
+    </div>
+    <div id="koszont">
+          
+    </div>
+
+    
+
+    
+
+</body>
+
+</html>
