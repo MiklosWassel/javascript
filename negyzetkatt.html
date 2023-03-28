@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kattints</title>
+   
+    <style>
+        .negyzet{
+            text-align: center;
+            background-color: blue;
+            width: 100px;
+            height: 100px;
+            left: 200px;
+            top: 300px;
+            position: absolute;
+        }
+    </style>
+    
+    <script>
+        function kattintottam(){
+            left=Math.floor(Math.random()*1024)
+            top =Math.floor(Math.random()*1024)
+            var d=document.getElementById("n");
+            d.style.left=left+"px"
+            d.style.top=top+"px"
+            document.getElementById("katt").innerHTML=top
+        }
+        h = setInterval(function()){
+            
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td> Kattintás: </td>
+            <td>
+                <span id="katt">0</span>
+            </td>
+        </tr>
+        <tr>
+            <td> Talált: </td>
+            <td><span id="talalt">0</span></td>
+        </tr>
+    </table>
+    <button onclick="kattintottam()">Katt</button>
+    <div class="negyzet" id="n"></div>
+</body>
+
+</html>
