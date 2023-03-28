@@ -7,32 +7,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Java script 2.</title>
     <script>
-        function tipp(){
-            tippem=document.getElementById('tipp').value; 
-            if (tippem == gondol ) {
+        function tipp() {
+
+            tippem = document.getElementById('tipp').value;
+            tippSzam = tippSzam + 1
+            if (tippem == gondol) {
+
                 document.getElementById("koszont").innerHTML =
-                gondol+" "+
-                "<input id='tipp'>"
-                 
+                    gondol + " " +
+                    "<input id='tipp'>"
+                "<button onclick='tipp()'>Tippem</button"
             }
         }
-        function igen(){
-            
-            gondol = Math.floor(Math.random() * 100) + 1;
-            document.getElementById("koszont").innerHTML =
-            "<input id='tipp'>"+
-            "<button onclick='tipp()'>Tippem</button>"
+        function tipp() {
+            tippem = document.getElementById('tipp').value;
+            tippSzam = tippSzam + 1
+            if (tippem == gondol) {
+                
+                document.getElementById("koszont").innerHTML =
+                    "Gratulálok eltaláltad!"
+                +" "+tippSzam+" lépésben."
+                
+               document.getElementById("uzenet").innerHTML = 
+               gondol+" volt a szám!"
+            }
+
+            tippem = document.getElementById('tipp').value;
+            if (tippem < gondol) {
+                document.getElementById("uzenet").innerHTML =
+                    "Kicsi!"
+            }
+
+
+
+
+            tippem = document.getElementById('tipp').value;
+            if (tippem > gondol) {
+                document.getElementById("uzenet").innerHTML =
+                    "Nagy!"
+            }
         }
-        function nem(){
+
+        function igen() {
+
+            gondol = Math.floor(Math.random() * 100) + 1;
+            tippSzam=0
             document.getElementById("koszont").innerHTML =
-            "Nagyon sajnálom!<br>Viszlát"
+                /*gondol + " " + */
+                "<input id='tipp'>" +
+                "<button onclick='tipp()'>Tippem</button>"
+        }
+        function nem() {
+            document.getElementById("koszont").innerHTML =
+                "Nagyon sajnálom!<br>Viszlát"
         }
         function katt() {
-          nev =  document.getElementById("neved").value
-            document.getElementById("koszont").innerHTML = " Jó hogy meglátogattál "+nev+
-            "<br>Szeretnél velem játszani?"+
-            "<button onclick='igen()'> Igen </button>"+
-            "<button onclick='nem()'> Nem </button>";
+            nev = document.getElementById("neved").value
+            document.getElementById("koszont").innerHTML = " Jó hogy meglátogattál " + nev +
+                "<br>Szeretnél velem játszani?" +
+                "<button onclick='igen()'> Igen </button>" +
+                "<button onclick='nem()'> Nem </button>";
         }
     </script>
     <style>
@@ -53,12 +87,14 @@
         <button onclick="katt()"> nyomd </button>
     </div>
     <div id="koszont">
-          
+     <!-- beviteli mező -->
     </div>
+<div id="uzenet">
+<!--Kicsi- Nagy uzenet-->
+</div>
 
-    
 
-    
+
 
 </body>
 
